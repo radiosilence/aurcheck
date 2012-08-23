@@ -81,12 +81,14 @@ def check(pkg, aurpkg):
             aur_ver
         )
 
-while True:
-    print("checking for update")
-    for pkg, aurpkg in packages:
-        gt, msg = check(pkg, aurpkg)
-        print(msg)
-        if gt:
-            send_email(msg)
 
-    sleep(INTERVAL)
+if __name__ == '__main__':
+    while True:
+        print("checking for update")
+        for pkg, aurpkg in packages:
+            gt, msg = check(pkg, aurpkg)
+            print(msg)
+            if gt:
+                send_email(msg)
+
+        sleep(INTERVAL)

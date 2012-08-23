@@ -4,6 +4,8 @@ import json
 import smtplib
 import requests
 
+INTERVAL = 60*5
+
 ARCH = 'x86_64'
 
 REPO_URL = 'https://www.archlinux.org/packages/{1}/{2}/{0}/json/'
@@ -85,4 +87,4 @@ while True:
         if gt:
             send_email(msg)
 
-    sleep(5)
+    sleep(INTERVAL)

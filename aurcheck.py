@@ -37,6 +37,8 @@ def ver_greater(a, b):
         try:
             if int(point) > int(b[i]):
                 return True
+            elif int(point) < int(b[i]):
+                return False
         except IndexError:
             return True
         i += 1

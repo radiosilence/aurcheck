@@ -22,11 +22,11 @@ def get_ver(package, repo=None):
             package,
             repo,
             ARCH
-        )).content.decode('utf-8'))['pkgver']
+        )).text)['pkgver']
     else:
         return json.loads(requests.get(AUR_URL.format(
             package
-        )).content.decode('utf-8'))['results']['Version'].split('-')[0]
+        )).text)['results']['Version'].split('-')[0]
 
 
 def ver_greater(a, b):
